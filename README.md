@@ -57,19 +57,18 @@ A partir del modelo que se construya se tiene que poder saber fácilmente, para 
 - si la formación _está habilitada_. Esto significa que todos los vagones estén habilitados para usarse. Los vagones son revisados por los técticos cada cierto tiempo, y decimos que un vagón está habilitado si la fecha de la última revisión fue hace menos de 30 días.
 _Nota: la clase [Date](https://www.wollok.org/documentacion/wollokdoc/) te puede llegar a servir para esto._
 
-También se tiene que poder hacer _mantenimiento_ de una formación, que implica:
-- actualizar la fecha de la última revisión de cada vagón al día actual.
-- además, el mantenimiento de un vagón de carga conlleva arreglar dos de las maderas que tiene sueltas: si tenía 5 pasa a 3, si tenía 1 pasa a 0, si tenía 0 queda en 0.
-- para el resto de los vagones no tienen ningún efecto particular que interese para este modelo. 
-
-Por último, se quiere saber el _peso máximo total_ de la formación, que es la suma del _peso máximo_ que soporta cada vagón, esto se calcula como 80 kilos por cada pasajero que puede llevar, más el máximo de carga que soporta.
-
-
 ### Vagones con bicis
 Hace poco, se agregaron nuevos vagones para pasajeros con lugar para transportar las bicis. Estos son como un vagón de pasajeros, pero:
 - además conocemos la cantidad de bicis que entran.
-- entonces la _cantidad de pasajeros_ que entran en estos vagones se calcula igual que la de pasajeros, pero restándole 2 por cada bici que puede transportar (que es ocupado por los soportes).
-- ninguno tiene baño.
+- entonces la _cantidad de pasajeros_ que entran en estos vagones se calcula igual que la de pasajeros, pero restándole, en el cálculo, 1 metro de largo útil por cada bici que puede transportar (que es ocupado por los soportes).
+
+### Haciendo mantemientos
+Cada cierto tiempo se hace un _mantenimiento de rutina_ de una formación, que implica:
+- actualizar la fecha de la última revisión de cada vagón al día actual.
+- además, el mantenimiento de un vagón de carga conlleva arreglar dos de las maderas que tiene sueltas: si tenía 5 pasa a 3, si tenía 1 pasa a 0, si tenía 0 queda en 0.
+- para el resto de los vagones no tienen ningún efecto particular que interese para este modelo. 
+- una aclaración importante que nos dijeron es que estos tipos de mantenimientos se hacen solamente sobre vagones cuyo _peso máximo_ sea menos a 2 toneladas (2000 kilos). El  _peso máximo_ que de cada vagón, esto se calcula como 80 kilos por cada pasajero que puede llevar, más el máximo de carga que soporta.
+
 
 <br>
 
